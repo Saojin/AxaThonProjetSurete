@@ -4,7 +4,7 @@
 
 declare var _:any; // hacky hacky ^^
 
-module Emergen6Controllers {
+module AxaSafeControllers {
   export class RegieCtrl {
         
         public currentPoint:any;

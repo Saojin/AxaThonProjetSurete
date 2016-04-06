@@ -4,30 +4,9 @@ div(layout="row")
             ui-gmap-markers(models="ctrl.map.pointList",icon="'icon'",type="'cluster'",type-options='{"gridSize":60,"ignoreHidden":false,"minimumClusterSize":2}',option="'options'", coords="'position'", idKey="'id'", click="click")
     div(flex="25")
         div.icon-bar(layout="row")
-            div(flex)
-                span.fa-stack.fa-lg
-                    i.fa.fa-circle.fa-stack-2x
-                    i.fa.fa-fire.fa-stack-1x.fa-inverse
-                div.md-body-2(ng-bind="ctrl.fk.data1")
-                div.md-caption incendies
-            div(flex)
-                span.fa-stack.fa-lg
-                    i.fa.fa-circle.fa-stack-2x
-                    i.fa.fa-heartbeat.fa-stack-1x.fa-inverse
-                div.md-body-2(ng-bind="ctrl.fk.data2")
-                div.md-caption attaques
-            div(flex)
-                span.fa-stack.fa-lg
-                    i.fa.fa-circle.fa-stack-2x
-                    i.fa.fa-ambulance.fa-stack-1x.fa-inverse
-                div.md-body-2(ng-bind="ctrl.fk.data3")
-                div.md-caption dem. secours
-            div(flex)
-                span.fa-stack.fa-lg
-                    i.fa.fa-circle.fa-stack-2x
-                    i.fa.fa-bomb.fa-stack-1x.fa-inverse
-                div.md-body-2(ng-bind="ctrl.fk.data4")
-                div.md-caption colis suspects
+            div
+                md-input-container
+                    input(type="text", placeholder="Adresse")
         md-divider
 
         div(layout="column")
@@ -40,7 +19,8 @@ div(layout="row")
                         span.fa-stack.fa-lg
                             i.fa.fa-circle.fa-stack-2x.yellow
                             i.fa.fa-fire.fa-stack-1x.fa-inverse
-                        span Incendie, niveau 2
+                        md-input-container Test
+                            input(type="text")
                     div
                         span.fa-stack.fa-lg
                             i.fa.fa-circle.fa-stack-2x.red

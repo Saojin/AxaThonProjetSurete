@@ -5,7 +5,7 @@
 describe('app', () => {
     it('créé une application', () => {
         try {
-            let app = angular.module('emergen6');
+            let app = angular.module('axasafe');
             expect(app).toBeDefined();
             expect(app.controller('regieCtrl')).toBeDefined();
         }

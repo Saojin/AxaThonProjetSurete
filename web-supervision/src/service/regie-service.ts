@@ -2,7 +2,7 @@
 
 'use strict';
 
-module Emergen6Services {
+module AxaSafeServices {
     export class RegieService {
         public socket:any;
 

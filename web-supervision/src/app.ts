@@ -3,7 +3,7 @@
 'use strict';
 
 (() => {
-    var app:ng.IModule = angular.module('emergen6', ['ngMaterial','ngRoute','uiGmapgoogle-maps','ngResource']);
+    var app:ng.IModule = angular.module('axasafe', ['ngMaterial','ngRoute','uiGmapgoogle-maps','ngResource']);
     app.config(appConfig);
     
     function appConfig($mdThemingProvider:ng.material.IThemingProvider, $routeProvider:ng.route.IRouteProvider,uiGmapGoogleMapApiProvider:any) { 
@@ -27,7 +27,7 @@
     }
 
     app.constant('apiBaseUrl', 'http://localhost:9999');
-    app.controller('RegieCtrl', Emergen6Controllers.RegieCtrl);
-    app.service('RegieService',  Emergen6Services.RegieService);
-    app.service('UserService',  Emergen6Services.UserService);
+    app.controller('RegieCtrl', AxaSafeControllers.RegieCtrl);
+    app.service('RegieService',  AxaSafeServices.RegieService);
+    app.service('UserService',  AxaSafeServices.UserService);
 })();

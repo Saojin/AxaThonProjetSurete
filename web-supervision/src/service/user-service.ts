@@ -2,7 +2,7 @@
 
 'use strict';
 
-module Emergen6Services {
+module AxaSafeServices {
     export function UserService($resource:any, apiBaseUrl: any) {
         'ngInject';
         return $resource(apiBaseUrl + '/api/utilisateurs/:id');
