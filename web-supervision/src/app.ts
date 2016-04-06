@@ -26,7 +26,7 @@
             });
     }
 
-    app.constant('apiBaseUrl', 'http://localhost:9999');
+    app.constant('apiBaseUrl', 'http://team18-axasafe.azurewebsites.com');
     app.controller('RegieCtrl', AxaSafeControllers.RegieCtrl);
     app.service('RegieService',  AxaSafeServices.RegieService);
     app.service('UserService',  AxaSafeServices.UserService);

@@ -1,12 +1,12 @@
 {
-  "name": "a6t-regie-web",
+  "name": "axasafe-regie-web",
   "description": "régie web",
   "main": "server.js",
   "authors": [
-    "Pierre CLEMENT <pierre@clement.re> (http://www.pierre-clement.info)"
+    "Benoit FONTAINE <benoit.a.fontaine@axa.fr>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/pierrecle/emergen6",
+  "homepage": "https://github.com/Saojin/AxaThonProjetSurete",
   "moduleType": [],
   "private": true,
   "devDependencies": {
