@@ -1,0 +1,26 @@
+{
+  "name": "a6t-server",
+  "version": "1.0.0",
+  "description": "Serveur du projet namecode \"emergen6\".",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierrecle/emergen6.git"
+  },
+  "author": "Pierre CLEMENT <pierre@clement.re> (http://www.pierre-clement.info)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pierrecle/emergen6/issues"
+  },
+  "homepage": "https://github.com/pierrecle/emergen6#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "documentdb": "^1.5.1",
+    "express": "^4.13.3",
+    "socket.io": "^1.4.4"
+  }
+}
