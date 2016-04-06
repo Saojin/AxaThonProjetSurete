@@ -16,6 +16,7 @@
 		C13A7D8F1CB51DD800D34E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13A7D8D1CB51DD800D34E82 /* LaunchScreen.storyboard */; };
 		C13A7D9A1CB51DD800D34E82 /* hackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A7D991CB51DD800D34E82 /* hackathonTests.swift */; };
 		C13A7DA51CB51DD800D34E82 /* hackathonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A7DA41CB51DD800D34E82 /* hackathonUITests.swift */; };
+		C1523FB51CB5232C00E4637F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C13A7DA01CB51DD800D34E82 /* hackathonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hackathonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A7DA41CB51DD800D34E82 /* hackathonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackathonUITests.swift; sourceTree = "<group>"; };
 		C13A7DA61CB51DD800D34E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1523FB51CB5232C00E4637F /* CoreBluetooth.framework in Frameworks */,
 				8574A5919F3A5A6D4B17176E /* Pods_hackathon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +96,7 @@
 		0DB5D956A83AA76689B610A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */,
 				A9E6D08211461B941EE95809 /* Pods_hackathon.framework */,
 			);
 			name = Frameworks;
@@ -222,6 +226,11 @@
 				TargetAttributes = {
 					C13A7D7D1CB51DD800D34E82 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C13A7D941CB51DD800D34E82 = {
 						CreatedOnToolsVersion = 7.0;
