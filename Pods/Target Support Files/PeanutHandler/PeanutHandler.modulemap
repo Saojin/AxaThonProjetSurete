@@ -1,0 +1,6 @@
+framework module PeanutHandler {
+  umbrella header "PeanutHandler-umbrella.h"
+
+  export *
+  module * { export * }
+}

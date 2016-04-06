@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Xcode 7.0">
+    <entity name="Peanut" representedClassName=".Peanut" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rssi" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="peanutLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeanutList" inverseName="peanuts" inverseEntity="PeanutList" syncable="YES"/>
+    </entity>
+    <entity name="PeanutList" representedClassName=".PeanutList" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isWhitelist" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="peanuts" toMany="YES" deletionRule="Nullify" destinationEntity="Peanut" inverseName="peanutLists" inverseEntity="Peanut" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Peanut" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="PeanutList" positionX="-63" positionY="9" width="128" height="90"/>
+    </elements>
+</model>

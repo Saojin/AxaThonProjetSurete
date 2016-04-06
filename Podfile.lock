@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.3.0)
+  - PeanutHandler (1.0.0):
+    - Alamofire (~> 3.0)
+    - XCGLogger (~> 3.2)
+  - XCGLogger (3.3)
+
+DEPENDENCIES:
+  - PeanutHandler
+
+SPEC CHECKSUMS:
+  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  PeanutHandler: 3ba3d6668f1918cb3862d20e1a3e624c8e644b52
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+
+COCOAPODS: 0.39.0
