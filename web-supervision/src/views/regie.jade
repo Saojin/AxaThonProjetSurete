@@ -1,0 +1,62 @@
+div(layout="row")
+    div(flex)
+        ui-gmap-google-map(center='ctrl.map.center', zoom='ctrl.map.zoom', id="map-regie", bounds="ctrl.map.bounds", events="ctrl.map.events", options="ctrl.map.options")
+            ui-gmap-markers(models="ctrl.map.pointList",icon="'icon'",type="'cluster'",type-options='{"gridSize":60,"ignoreHidden":false,"minimumClusterSize":2}',option="'options'", coords="'position'", idKey="'id'", click="click")
+    div(flex="25")
+        div.icon-bar(layout="row")
+            div(flex)
+                span.fa-stack.fa-lg
+                    i.fa.fa-circle.fa-stack-2x
+                    i.fa.fa-fire.fa-stack-1x.fa-inverse
+                div.md-body-2(ng-bind="ctrl.fk.data1")
+                div.md-caption incendies
+            div(flex)
+                span.fa-stack.fa-lg
+                    i.fa.fa-circle.fa-stack-2x
+                    i.fa.fa-heartbeat.fa-stack-1x.fa-inverse
+                div.md-body-2(ng-bind="ctrl.fk.data2")
+                div.md-caption attaques
+            div(flex)
+                span.fa-stack.fa-lg
+                    i.fa.fa-circle.fa-stack-2x
+                    i.fa.fa-ambulance.fa-stack-1x.fa-inverse
+                div.md-body-2(ng-bind="ctrl.fk.data3")
+                div.md-caption dem. secours
+            div(flex)
+                span.fa-stack.fa-lg
+                    i.fa.fa-circle.fa-stack-2x
+                    i.fa.fa-bomb.fa-stack-1x.fa-inverse
+                div.md-body-2(ng-bind="ctrl.fk.data4")
+                div.md-caption colis suspects
+        md-divider
+
+        div(layout="column")
+            .loading(ng-show='ctrl.isLoading')
+                md-progress-circular(md-diameter="96")
+                span Chargement...
+            div.side-content(layout="column",layout-align="center",ng-show="ctrl.currentPoint")
+                md-content(layout-padding)
+                    div
+                        span.fa-stack.fa-lg
+                            i.fa.fa-circle.fa-stack-2x.yellow
+                            i.fa.fa-fire.fa-stack-1x.fa-inverse
+                        span Incendie, niveau 2
+                    div
+                        span.fa-stack.fa-lg
+                            i.fa.fa-circle.fa-stack-2x.red
+                            i.fa.fa-medkit.fa-stack-1x.fa-inverse
+                        span 30 blessés et +
+                    div
+                       span {{ctrl.currentPoint.utilisateur.name}}
+                     div(ng-show="ctrl.currentPoint.utilisateur")
+                        span Téléphone :
+                            |{{ctrl.currentPoint.utilisateur.phone}}
+                div(layout="column",layout-sm, ng-show="ctrl.currentPoint.image")
+                    h2
+                        | Média reçu
+                    img.photo(data-ng-src="data:image/png;base64,{{ctrl.currentPoint.image}}",alt="Media",flex)
+        
+            
+        
+    
+    

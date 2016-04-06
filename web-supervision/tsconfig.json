@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5"
+  },
+  "filesGlob": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "!**/*.d.ts"
+  ],
+  "files": [
+    "src/app.ts",
+    "src/controller/regie-controller.ts",
+    "src/service/regie-service.ts",
+    "src/service/user-service.ts",
+    "test/karma/app.spec.ts"
+  ],
+  "exclude": [],
+  "compileOnSave": false
+}
