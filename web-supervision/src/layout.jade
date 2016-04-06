@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title EMERGEN6 - Supervision
+        | !{bundles.style}
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        style
+            |.angular-google-map-container { height: calc(100vh - 64px); }
+            |.loading { text-align: center; }
+            |.loading > md-progress-circular { margin: 0 auto; }
+            |.icon-bar .flex{ text-align:center; padding: 5px 0; }
+            |.icon-bar .fa-stack { width: 2.5em; height: 2.5em; line-height: 2.5em; }
+            |.icon-bar .fa-stack-2x { font-size: 2.5em; }
+            |.fa-stack-1x.black { color: #000; }
+            |.fa-stack-2x.red { color: #F44336; }
+            |.fa-stack-2x.orange { color: #FF9800; }
+            |.fa-stack-2x.yellow { color: #FFEB3B }
+            |.fa-stack-2x.yellow + .fa-inverse { color: black !important; }
+            |img.photo {margin: 0 auto;}
+    body
+        div(layout="column")
+            md-toolbar(md-scroll-shrink)
+                .md-toolbar-tools
+                    h3
+                        span EMERGEN6 - Supervision
+        div(ng-view)
+        | !{bundles.lib}
+        | !{bundles.app}
+        script
+            | angular.bootstrap(document, ['emergen6']);
+        if livereload
+            script(src="http://localhost:35729/livereload.js?snipver=1")

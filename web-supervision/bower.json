@@ -1,0 +1,21 @@
+{
+  "name": "a6t-regie-web",
+  "description": "régie web",
+  "main": "server.js",
+  "authors": [
+    "Pierre CLEMENT <pierre@clement.re> (http://www.pierre-clement.info)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pierrecle/emergen6",
+  "moduleType": [],
+  "private": true,
+  "devDependencies": {
+    "angular": "latest",
+    "angular-material": "latest",
+    "angular-mocks": "latest",
+    "angular-route": "latest",
+    "angular-google-maps": "latest",
+    "angular-resource": "latest",
+    "socket.io-client": "latest"
+  }
+}
