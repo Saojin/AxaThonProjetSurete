@@ -16,6 +16,7 @@ class ViewController: UIViewController,PeanutsManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //peanutsManager.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -40,14 +41,24 @@ class ViewController: UIViewController,PeanutsManagerDelegate {
         peanutsManager.disconnect()
     }
     
+    @IBAction func launchNotificationAction(sender: AnyObject) {
+        peanutsManager.launchNotification()
+    }
     func connectedPeanut() {
         displayAlertView("Peanuts Connecté")
     }
     
+    func peanutsManagerTouchDetected() {
+        displayAlertView("Envoie de votre Etat Confirmé.")
+    }
+    
     func displayAlertView(title:String){
-        let alert = UIAlertController(title: "Alert", message: title, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Alert", message: title, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        })
+        
     }
 
 }
