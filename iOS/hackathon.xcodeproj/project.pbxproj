@@ -129,6 +129,9 @@
 		C13A7D801CB51DD800D34E82 /* hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				DC61A7DE1CB549A00078A70C /* Manager */,
+				DC61A7DF1CB549A00078A70C /* Model */,
+				DC61A7E01CB549A00078A70C /* View */,
 				C13A7D811CB51DD800D34E82 /* AppDelegate.swift */,
 				C13A7D831CB51DD800D34E82 /* ViewController.swift */,
 				C13A7D851CB51DD800D34E82 /* Main.storyboard */,
@@ -157,6 +160,27 @@
 				C13A7DA61CB51DD800D34E82 /* Info.plist */,
 			);
 			path = hackathonUITests;
+			sourceTree = "<group>";
+		};
+		DC61A7DE1CB549A00078A70C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DC61A7DF1CB549A00078A70C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC61A7E01CB549A00078A70C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
