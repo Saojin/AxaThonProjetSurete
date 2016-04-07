@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertsViewController: UIViewController {
+class AlertsViewController: UIViewController,PeanutsManagerDelegate {
     @IBOutlet weak var ViewQuestion: UIView!
     @IBOutlet weak var btnEnRisque: UIButton!
     @IBOutlet weak var titreQuestion: UILabel!
@@ -31,6 +31,20 @@ class AlertsViewController: UIViewController {
         super.viewDidLoad()
         self.messageOk.text = self.items[0]
         self.descriptionMEssage.text = self.items[1]
+        self.peanutsManager.delegatePeanuts = self
+    }
+    
+    func peanutsManagerTouchDetected() {
+        displayAlertView("Envoie de votre Etat Confirmé.")
+    }
+    
+    func displayAlertView(title:String){
+        dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Alert", message: title, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        })
+        
     }
 
     @IBAction func clicLogo(sender: AnyObject) {
