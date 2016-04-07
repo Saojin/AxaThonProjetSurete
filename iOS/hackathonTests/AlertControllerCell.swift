@@ -13,6 +13,7 @@ public class AlertControllerCell: UITableViewCell {
     @IBOutlet weak var Titre: UILabel!
     @IBOutlet weak var bouttonDroite: UIButton!
     @IBOutlet weak var bouttonGauche: UIButton!
+    @IBOutlet weak var descriptionText: UILabel!
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -28,17 +29,17 @@ public class AlertControllerCell: UITableViewCell {
     public func configure(text: String, index: Int) {
         switch index {
         case 0:
-            self.textLabel?.text = text
+            self.descriptionText?.text = text
             self.Titre?.text = "Etes vous en sécurité"
             
         case 1:
-            self.textLabel?.text = text
+            self.descriptionText?.text = text
             self.Titre?.text = "Informations"
             self.bouttonDroite?.hidden = true;
             self.bouttonGauche?.hidden = true;
             
         default:
-            self.textLabel?.hidden = true;
+            self.descriptionText?.hidden = true;
             self.Titre?.hidden = true;
             self.bouttonDroite?.hidden = true;
             self.bouttonGauche?.hidden = true;
