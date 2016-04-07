@@ -27,11 +27,11 @@ public class AlertControllerCell: UITableViewCell {
     
     public func configure(text: String, index: Int) {
         switch index {
-        case 1:
+        case 0:
             self.textLabel?.text = text
             self.Titre?.text = "Etes vous en sécurité"
             
-        case 2:
+        case 1:
             self.textLabel?.text = text
             self.Titre?.text = "Informations"
             self.bouttonDroite?.hidden = true;
