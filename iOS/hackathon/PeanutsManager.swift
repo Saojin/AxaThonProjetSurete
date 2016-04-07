@@ -82,7 +82,7 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
         localNotification.soundName = UILocalNotificationDefaultSoundName
         //localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         
-        //var myTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector:Selector(startBuzzer()), userInfo: nil, repeats:false)
+        self.startBuzzer()
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
