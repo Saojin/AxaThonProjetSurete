@@ -91,8 +91,8 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
     public func launchNotification (){
         
         let localNotification = UILocalNotification()
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-        localNotification.alertBody = "Incident à l'adresse ......"
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 3)
+        localNotification.alertBody = "Bonjour, un incident majeur a eu lieu au sein de votre périmètre d’habitation. Merci de nous confirmer que vous êtes en sécurité."
         localNotification.timeZone = NSTimeZone.defaultTimeZone()
         localNotification.soundName = UILocalNotificationDefaultSoundName
         //localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
