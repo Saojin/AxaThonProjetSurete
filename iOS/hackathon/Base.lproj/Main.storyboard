@@ -97,6 +97,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ViewQuestion" destination="Yfi-a6-DNO" id="8r7-nM-Lni"/>
+                        <outlet property="btnEnRisque" destination="se8-7j-fgN" id="idP-D1-Sdw"/>
+                        <outlet property="btnEnSurete" destination="o4g-0l-pqo" id="UVW-Rb-xiG"/>
+                        <outlet property="descriptionMEssage" destination="kvC-Ft-C8Y" id="ksy-Rw-gbk"/>
+                        <outlet property="messageOk" destination="E3Q-gF-uBI" id="M0N-pQ-SvJ"/>
+                        <outlet property="titreMessage" destination="7FC-pd-UvT" id="S2g-ir-USQ"/>
+                        <outlet property="titreQuestion" destination="y5C-i6-ZvT" id="voX-3C-Xyd"/>
+                        <outlet property="viewMessage" destination="hj9-jX-BqP" id="EwL-DI-W4t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xq-7Q-VlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
