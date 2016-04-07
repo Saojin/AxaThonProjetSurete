@@ -5,12 +5,12 @@ div(layout="row")
     div(flex="25")
         div(layout="column")
             md-input-container
-                input(type="text", placeholder="Adresse")
+                input(type="text", placeholder="Adresse", ng-model="ctrl.searchString")
             md-input-container
                 label Rayon : {{ctrl.distance}} km
                 br
                 md-slider(flex,class="md-primary",md-discrete,ng-model="ctrl.distance",step="1",min="0",max="30")
-            md-button(type="submit",class="btn btn-default") Envoyer
+            md-button(ng-click="ctrl.searchAddress()",class="md-raised") Envoyer
 
         md-divider
 

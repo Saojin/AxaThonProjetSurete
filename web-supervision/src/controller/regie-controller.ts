@@ -5,12 +5,15 @@
 declare var _:any; // hacky hacky ^^
 
 module AxaSafeControllers {
-  export class RegieCtrl {
-        
+    export class RegieCtrl {
+
         public currentPoint:any;
         public map:any;
         public fk:any = {};
         public isLoading:boolean = true;
+        public searchbox:any;
+        public searchString:string;
+
 
         constructor(public $scope:ng.IScope, uiGmapGoogleMapApi:any, public RegieService:any, public UserService:any, $interval:any) {
             'ngInject';
@@ -25,63 +28,50 @@ module AxaSafeControllers {
                 }
                  maps.visualRefresh = true;
 
+                //this.isLoading = false;
                  RegieService.getPositions().then((response:any) => {
-                     this.fk.data1 = Math.ceil(Math.random()*234);
-                     this.fk.data2 = Math.ceil(Math.random()*932);
-                     this.fk.data3 = Math.ceil(Math.random()*534);
-                     this.fk.data4 = Math.ceil(Math.random()*16);
+
                       this.isLoading = false;
 
                       response.data.forEach((signalement:any) => {
                           if(!signalement.hasMeta)
-                    signalement.icon = 'src/img/no-info.png';
-                    else
-                    signalement.icon = 'src/img/info.png';
-                
+                            signalement.icon = 'src/img/no-info.png';
+                          else
+                            signalement.icon = 'src/img/info.png';
+
                           signalement.click =  ()=> {
-                              if(!!signalement.hasMeta)   
+                              if(!!signalement.hasMeta)
                               this.showDetails(signalement);
                               else
                               this.currentPoint = null;
                           };
                           this.map.pointList.push(signalement);
                       });
-                     $interval(() => {
-                       this.fk.data1 = Math.ceil(Math.random()*234);
-                     }, 1000 + Math.random() * 2500);
-                     $interval(() => {
-                       this.fk.data2 = Math.ceil(Math.random()*932);
-                     }, 1000 + Math.random() * 2500);
-                     $interval(() => {
-                       this.fk.data3 = Math.ceil(Math.random()*534);
-                     }, 1000 + Math.random() * 2500);
-                     $interval(() => {
-                       this.fk.data4 = Math.ceil(Math.random()*16);
-                     }, 1000 + Math.random() * 2500);
                  });
             });
-            
+
             this.map =  {center: { latitude: 48.8965812, longitude: 2.318375999999944 }, zoom: 13, pointList: [], options: {streetViewControl: false}};
-            
+
+
 
             RegieService.socket.on('nouveau-signalement', (signalement:any) => {
               signalement.options = {animation: 2};
                 if(!signalement.hasMeta)
                     signalement.icon = 'src/img/no-info.png';
-                    else
+                else
                     signalement.icon = 'src/img/info.png';
-                    
-                 signalement.click =  ()=> {   
-                      if(!!signalement.hasMeta)   
-                              this.showDetails(signalement);
-                              else
-                              this.currentPoint = null;
+
+                 signalement.click =  ()=> {
+                      if(!!signalement.hasMeta)
+                          this.showDetails(signalement);
+                      else
+                          this.currentPoint = null;
             };
               this.map.pointList.push(signalement);
               this.$scope.$apply();
             });
         }
-        
+
         showDetails(point:any) {
           this.isLoading = true;
           this.currentPoint = null;
@@ -95,6 +85,10 @@ module AxaSafeControllers {
               this.isLoading = false;});
           });
           this.$scope.$apply();
+        }
+
+        searchAddress(filter:string) {
+            //this.map.panTo()
         }
     }
 }

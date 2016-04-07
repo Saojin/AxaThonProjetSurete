@@ -13,7 +13,7 @@ module AxaSafeServices {
         }
 
         getPositions() {
-            return this.$http.get(this.apiBaseUrl+'/api/signalements-positions');
+            return  this.$http.get(this.apiBaseUrl+'/api/signalements/positions');
         }
 
         resource() {
