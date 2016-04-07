@@ -25,6 +25,8 @@ class AlertsViewController: UIViewController {
     var items: [String] = ["Bonjour, un incident majeur a eu lieu au sein de votre périmètre d’habitation. Merci de nous confirmer que vous êtes en sécurité.", "Le 'niveau alerte attentat' est maintenu en Ile-de-France et la vigilance renforcée continue de s'appliquer sur le reste du territoire.  Le ministère demande à chacune et chacun de les respecter afin d'améliorer le niveau de sécurité "]
     var identifientCell = "cellulle"
     
+    var peanutsManager:PeanutsManager = PeanutsManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.messageOk.text = self.items[0]

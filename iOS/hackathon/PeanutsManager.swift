@@ -8,11 +8,12 @@
 
 import Foundation
 import PeanutHandler
+import Alamofire
 
 public class PeanutsManager: NSObject, PeanutManagerDelegate {
     let peanutManager = PeanutManager.sharedInstance()
 
-    weak public var delegate: PeanutsManagerDelegate?
+    weak public var delegatePeanuts: PeanutsManagerDelegate?
     
     override init() {
         super.init()
@@ -58,19 +59,33 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
     public func peanutManagerDidReceiveData(peanutManager: PeanutManager, peanutHandler: PeanutHandler, data: PeanutData) {
         
         if(data.feedId == FeedId.Touch){
-            self.delegate?.peanutsManagerTouchDetected!()
+            sendRequestForSignalements("OK")
+        }
+    }
+    
+    func sendRequestForSignalements(etat:String){
+        let dic : [String : AnyObject] = ["position":["latitude":"2,2238626","longitude":" 48,8965919"],"nom": "Hamon Julien", "etat": etat]
+        
+        Alamofire.request(.POST, "http://team18-axasafe.azurewebsites.net/api/signalements",parameters: dic,encoding: .JSON)
+            .response { request, response, data, error in
+                print(request)
+                print(response)
+                print(NSString.init(data: data!, encoding: 1))
+                print (error)
+                self.delegatePeanuts?.peanutsManagerTouchDetected!()
+
         }
     }
     
     public func peanutManagerDidDiscoverPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler) {
         //self.delegate?.peanutsManagerDidDiscoverPeanut!(peanutManager, peanutHandler: peanutHandler)
-        //peanutHandler.setProfile(PeanutProfileType.PresenceStandard)
+        peanutHandler.setProfile(PeanutProfileType.GenStandard)
         self.peanutManager.connectPeanut(peanutHandler)
         
     }
     
     public func peanutManagerDidConnectPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler) {
-        self.delegate?.connectedPeanut!()
+        //self.delegatePeanuts?.connectedPeanut!()
     }
     
     public func launchNotification (){

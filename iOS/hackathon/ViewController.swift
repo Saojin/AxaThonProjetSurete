@@ -16,7 +16,7 @@ class ViewController: UIViewController,PeanutsManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //peanutsManager.delegate = self
+        peanutsManager.delegatePeanuts = self
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -45,7 +45,7 @@ class ViewController: UIViewController,PeanutsManagerDelegate {
         peanutsManager.launchNotification()
     }
     func connectedPeanut() {
-        displayAlertView("Peanuts Connecté")
+        //displayAlertView("Peanuts Connecté")
     }
     
     func peanutsManagerTouchDetected() {
