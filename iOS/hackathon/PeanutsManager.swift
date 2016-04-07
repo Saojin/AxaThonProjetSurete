@@ -73,7 +73,7 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
         self.delegate?.connectedPeanut!()
     }
     
-    func launchNotification (){
+    public func launchNotification (){
         
         let localNotification = UILocalNotification()
         localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)

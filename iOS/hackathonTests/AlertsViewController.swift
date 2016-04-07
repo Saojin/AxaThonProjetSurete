@@ -31,4 +31,7 @@ class AlertsViewController: UIViewController {
         self.descriptionMEssage.text = self.items[1]
     }
 
+    @IBAction func clicLogo(sender: AnyObject) {
+        PeanutsManager().launchNotification()
+    }
 }
