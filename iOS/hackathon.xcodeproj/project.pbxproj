@@ -18,6 +18,10 @@
 		C13A7DA51CB51DD800D34E82 /* hackathonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A7DA41CB51DD800D34E82 /* hackathonUITests.swift */; };
 		C1523FB51CB5232C00E4637F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */; };
 		C156B1691CB55DB3001E336C /* PeanutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156B1681CB55DB3001E336C /* PeanutsManager.swift */; };
+		DCE033DD1CB6484D00CB863F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE033DC1CB6484D00CB863F /* LoginViewController.swift */; };
+		DCE033DF1CB6486400CB863F /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE033DE1CB6486400CB863F /* AlertsViewController.swift */; };
+		DCE033E11CB6487200CB863F /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE033E01CB6487200CB863F /* ConfigurationViewController.swift */; };
+		DCE033E31CB64E2100CB863F /* AlertControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE033E21CB64E2100CB863F /* AlertControllerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		C13A7DA61CB51DD800D34E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		C156B1681CB55DB3001E336C /* PeanutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeanutsManager.swift; sourceTree = "<group>"; };
+		DCE033DC1CB6484D00CB863F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = hackathonTests/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCE033DE1CB6486400CB863F /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertsViewController.swift; path = hackathonTests/AlertsViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCE033E01CB6487200CB863F /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationViewController.swift; path = hackathonTests/ConfigurationViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCE033E21CB64E2100CB863F /* AlertControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerCell.swift; path = hackathonTests/AlertControllerCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,10 @@
 		DC61A7E01CB549A00078A70C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DCE033DC1CB6484D00CB863F /* LoginViewController.swift */,
+				DCE033DE1CB6486400CB863F /* AlertsViewController.swift */,
+				DCE033E01CB6487200CB863F /* ConfigurationViewController.swift */,
+				DCE033E21CB64E2100CB863F /* AlertControllerCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,9 +382,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE033E31CB64E2100CB863F /* AlertControllerCell.swift in Sources */,
 				C13A7D841CB51DD800D34E82 /* ViewController.swift in Sources */,
+				DCE033DF1CB6486400CB863F /* AlertsViewController.swift in Sources */,
 				C13A7D821CB51DD800D34E82 /* AppDelegate.swift in Sources */,
 				C156B1691CB55DB3001E336C /* PeanutsManager.swift in Sources */,
+				DCE033E11CB6487200CB863F /* ConfigurationViewController.swift in Sources */,
+				DCE033DD1CB6484D00CB863F /* LoginViewController.swift in Sources */,
 				C13A7D8A1CB51DD800D34E82 /* hackathon.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
