@@ -17,6 +17,7 @@
 		C13A7D9A1CB51DD800D34E82 /* hackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A7D991CB51DD800D34E82 /* hackathonTests.swift */; };
 		C13A7DA51CB51DD800D34E82 /* hackathonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A7DA41CB51DD800D34E82 /* hackathonUITests.swift */; };
 		C1523FB51CB5232C00E4637F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */; };
+		C156B1691CB55DB3001E336C /* PeanutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156B1681CB55DB3001E336C /* PeanutsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C13A7DA41CB51DD800D34E82 /* hackathonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackathonUITests.swift; sourceTree = "<group>"; };
 		C13A7DA61CB51DD800D34E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1523FB41CB5232C00E4637F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		C156B1681CB55DB3001E336C /* PeanutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeanutsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				C13A7D8D1CB51DD800D34E82 /* LaunchScreen.storyboard */,
 				C13A7D901CB51DD800D34E82 /* Info.plist */,
 				C13A7D881CB51DD800D34E82 /* hackathon.xcdatamodeld */,
+				C156B1681CB55DB3001E336C /* PeanutsManager.swift */,
 			);
 			path = hackathon;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				TargetAttributes = {
 					C13A7D7D1CB51DD800D34E82 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = LBG2HC972H;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -344,6 +348,7 @@
 			files = (
 				C13A7D841CB51DD800D34E82 /* ViewController.swift in Sources */,
 				C13A7D821CB51DD800D34E82 /* AppDelegate.swift in Sources */,
+				C156B1691CB55DB3001E336C /* PeanutsManager.swift in Sources */,
 				C13A7D8A1CB51DD800D34E82 /* hackathon.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,10 +490,13 @@
 			baseConfigurationReference = B8F75F7743D2C04FD4539A4C /* Pods-hackathon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = hackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = t.hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -497,10 +505,13 @@
 			baseConfigurationReference = 5B7EFFC25D578A4ABA60454E /* Pods-hackathon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = hackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = t.hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

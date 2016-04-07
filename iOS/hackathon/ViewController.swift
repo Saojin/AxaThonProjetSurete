@@ -7,25 +7,48 @@
 //
 
 import UIKit
-import PeanutHandler
 
-class ViewController: UIViewController,PeanutManagerDelegate {
+class ViewController: UIViewController,PeanutsManagerDelegate {
+    
+    var peanutsManager:PeanutsManager = PeanutsManager()
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let peanutHandler = PeanutManager.sharedInstance()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func stopScanningAction(sender: AnyObject) {
+        peanutsManager.StopScanning()
+    }
+    
+    @IBAction func clickScanningAction(sender: AnyObject) {
+        peanutsManager.LaunchScanning()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func peanutManagerDidDiscoverPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler) {
-        print("Discore Peanut\(peanutHandler)")
+    @IBAction func startBuzzer(sender: AnyObject) {
+        peanutsManager.startBuzzer()
     }
-
+    
+    @IBAction func disconnectAction(sender: AnyObject) {
+        peanutsManager.disconnect()
+    }
+    
+    func connectedPeanut() {
+        displayAlertView("Peanuts Connecté")
+    }
+    
+    func displayAlertView(title:String){
+        let alert = UIAlertController(title: "Alert", message: title, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
 }
 
