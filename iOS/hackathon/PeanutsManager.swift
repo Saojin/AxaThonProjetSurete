@@ -42,24 +42,49 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
         var listPeanuts : [PeanutHandler] = peanutManager.getConnectedPeanuts()
         if listPeanuts.count > 0{
             peanutManager.sendCommand(command, toPeanut: listPeanuts[0])
+            
+            let bleBuilder = PeanutBLEProfile.Builder()
+            do {
+               try bleBuilder.setIntervalMax(0.3)
+            } catch {
+                print(error)
+            }
+            let bleProfile = bleBuilder.build()
+            listPeanuts[0].sendCommand(PeanutCommand(commandId: .SetBleProfile, extraData: bleProfile.getBytes()))
 
         }
     }
     
     public func peanutManagerDidReceiveData(peanutManager: PeanutManager, peanutHandler: PeanutHandler, data: PeanutData) {
-        peanutHandler.setProfile(PeanutProfileType.GenStandard)
-        self.delegate?.peanutsManagerDidReceiveData!()
+        
+        if(data.feedId == FeedId.Touch){
+            self.delegate?.peanutsManagerTouchDetected!()
+        }
     }
     
     public func peanutManagerDidDiscoverPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler) {
-        self.delegate?.peanutsManagerDidDiscoverPeanut!(peanutManager, peanutHandler: peanutHandler)
-        peanutHandler.setProfile(PeanutProfileType.GenStandard)
+        //self.delegate?.peanutsManagerDidDiscoverPeanut!(peanutManager, peanutHandler: peanutHandler)
+        //peanutHandler.setProfile(PeanutProfileType.PresenceStandard)
         self.peanutManager.connectPeanut(peanutHandler)
         
     }
     
     public func peanutManagerDidConnectPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler) {
         self.delegate?.connectedPeanut!()
+    }
+    
+    func launchNotification (){
+        
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
+        localNotification.alertBody = "Incident à l'adresse ......"
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        //localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        
+        //var myTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector:Selector(startBuzzer()), userInfo: nil, repeats:false)
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
 }
@@ -70,5 +95,5 @@ public class PeanutsManager: NSObject, PeanutManagerDelegate {
     optional func peanutsManagerDidStopScanning(peanutManager: PeanutManager)
     optional func peanutsManagerDidDiscoverPeanut(peanutManager: PeanutManager, peanutHandler: PeanutHandler)
     optional func connectedPeanut()
-    optional func peanutsManagerDidReceiveData()
+    optional func peanutsManagerTouchDetected()
 }
